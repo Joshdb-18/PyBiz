@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% with msg = get_flashed_messages() %}
+{% if msg %}
+<header class="alert alert-primary border text-center" role="alert">
+                {{ msg }}
+</header>
+{% endif %}
+{% endwith %}
+
+{% block main %}
+    <p>
+        Welcome user!
+    </p>
+{% endblock %}

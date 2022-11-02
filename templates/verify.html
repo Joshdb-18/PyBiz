@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Verify email
+{% endblock %}
+{% with msg = get_flashed_messages() %}
+{% if msg %}
+<header class="alert alert-primary border text-center" role="alert">
+                {{ msg }}
+</header>
+{% endif %}
+{% endwith %}
+
+{% block main %}
+    <form action = "/validate" method="post">
+        <h4> OTP has been sent to the email id. Please check the email for the confirmation.</h4>
+        <h3>Check spam folder if you can't find the message</h3>
+        Enter OTP(One-time password): <input type="text" name="otp">
+       <button type="submit" class="btn btn-primary">Submit</button>
+
+{% endblock %}

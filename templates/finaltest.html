@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <script src="https://kit.fontawesome.com/6f38f58660.js" crossorigin="anonymous"></script>
+        <title>
+          PyBiz: Final test
+        </title>
+    </head>
+    <body>
+        <header>
+            <nav class="bg-light border navbar navbar-expand-md navbar-light">
+                <div class="container-fluid">
+                    <a href="/" class="navbar-brand"><span style="color: red;font-style: oblique;">P</span><span style="color: green;font-style: oblique;">y</span><span style="color: blue;font-style: oblique;">B</span><span style="color: green;font-style:oblique;">i</span><span style="color: red;font-style: oblique;">z</span></a>
+                    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        </header>
+        <main>
+            <p>
+                {{ message }}
+            </p>
+            <form action="/finale" method="post">
+                <div>
+                    <label for="fques">What is the correct way to declare a variable in python? Choose the correct answer</label><br>
+                    <input type="radio" name="quiz" value="wrong"> <span> int n = 5;</span><br>
+                    <input type="radio" name="quiz" value="wrong"><span> n = "5";</span><br>
+                    <input type="radio" name="quiz" value="right"><span> str = "PyBiz"</span><br>
+                    <input type="radio" name="quiz" value="wrong"><span> str = PyBiz</span>
+                    <br>
+                    <label for="sques">What is the syntax for deleting in python?</label>
+                    <input type="text" name="del" autocomplete="off">
+                    <br>
+                    <label for="fques">How do you add comments in python?</label><br>
+                    <input type="radio" name="comm" value="wrong"> <span> /*</span><br>
+                    <input type="radio" name="comm" value="wrong"><span> "#"</span><br>
+                    <input type="radio" name="comm" value="right"><span> # </span><br>
+                    <input type="radio" name="comm" value="wrong"><span> <!- </span><br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+        </main>
+    </body>
+</html>

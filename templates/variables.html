@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <script src="https://kit.fontawesome.com/6f38f58660.js" crossorigin="anonymous"></script>
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>
+          PyBiz: Print
+        </title>
+    </head>
+    <body>
+        <header>
+            <nav class="bg-light border navbar navbar-expand-md navbar-light">
+                <div class="container-fluid">
+                    <a href="/" class="navbar-brand"><span style="color: red;font-style: oblique;">P</span><span style="color: green;font-style: oblique;">y</span><span style="color: blue;font-style: oblique;">B</span><span style="color: green;font-style:oblique;">i</span><span style="color: red;font-style: oblique;">z</span></a>
+                    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        </header>
+        <main>
+            <h2>Python Variables: How to Define/Declare String Variable Types</h2>
+            <br>
+            <h3>What is a Variable in Python?</h3>
+            <p>
+                A Python variable is a reserved memory location to store values. In other words, a variable in a python program gives data to the computer for processing.
+            </p>
+            <h4>Python Variable Types</h4>
+            <p>
+                Every value in Python has a datatype. Different data types in Python are Numbers, List, Tuple, Strings, Dictionary, etc. Variables in Python can be declared by any name or even alphabets like a, aa, abc, etc.
+            </p>
+            <p>
+                In this tutorial, we will learn,
+                <ul>
+                    <li>How to declare and use a variable</li>
+                    <li>Redeclare a variable</li>
+                    <li>Concatenate variables</li>
+                    <li>Local and Global variables</li>
+                    <li>Delete a variable</li>
+                </ul>
+            </p>
+            <h4>How to declare and use variables</h4>
+            <p>
+                Let see an example. We will define variable in Python and declare it as “a” and print it.
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                  a = 100<br>
+                  print(a)
+            </div>
+            <p>Run in our <a href="/editor">editor</a></p>
+            <h4>Re-declare a Variable</h4>
+            <p>
+                You can re-declare Python variables even after you have declared once.
+                <br>
+                Here we have Python declare variable initialized to f=0.
+                <br>
+                Later, we re-assign the variable f to value “PyBiz”
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                  <span style="color:grey;"># Declare a variable and initialise it</span><br>
+                  <span>f  = 0</span><br>
+                  <span>print(f)</span><br>
+                  <span style="color:grey;"># Redeclaring the variable works</span><br>
+                  <span>f = "PyBiz"</span><br>
+                  <span>print(f)</span>
+            </div>
+            <h5>Output:</h5>
+            <div class="alert alert-secondary" role="alert">
+                  <span style="color:grey;"># You can redeclare the variable even after it is declared once, it works</span><br>
+                  0<br>
+                  PyBiz
+            </div>
+            <h4>Python 2 example</h4>
+            <div class="alert alert-secondary" role="alert">
+                  <span style="color:grey;"># Declare a variable and initialise it</span><br>
+                  <span>f = 0</span><br>
+                  <span>print f</span><br>
+                  <span style="color:grey;"># re-declaring the variable works</span><br>
+                  <span>f = "PyBiz"</span><br>
+                  <span>print(f)</span>
+            </div>
+            <p>Copy the code and run in the <a href="/editor">editor</a> yourself</p>
+            <h4>Python String Concatenation and Variable</h4>
+            <p>
+                Let’s see whether you can concatenate different data types like string and number together. For example, we will concatenate “PyBiz” with the number “88”.
+            </p>
+            <p>
+                Unlike Java, which concatenates number with string without declaring number as string, while declaring variables in Python requires declaring the number as string otherwise it will show a TypeError
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                  <span style="color: grey"># ERROR: different types cannot be combined</span><br>
+                  <span>print("PyBiz"+99)</span><br>
+                  <span style="color:grey"># You'll get the following error message</span><br>
+                  <span style="color:red">Trackback (most recent call last):</span><br>
+                  0<br>
+                  <span style="color:red">&ensp;File "</span><span style="color:blue">your current working directory</span><span style="color:red;">"</span><br>
+                  PyBiz<br>
+                  <span style="color:red">&emsp;print("PyBiz"+88)</span><br>
+                  <span style="color:red">TypeError: must be str, not int</span>
+            </div>
+            <p>
+                For the following code, you will get undefined output –
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                a="PyBiz"<br>
+                b = 88<br>
+                print (a+b)
+            </div>
+            <p>
+                Once the integer is declared as string, it can concatenate both “PyBiz” + <b>str</b>(“88”)= “PyBiz” in the output.
+            </p>
+            <p>Run in our <a href="/editor">editor</a></p>
+            <h3>Python Variable Types: Local & Global</h3>
+            <p>
+                There are two types of variables in Python, Global variable and Local variable. When you want to use the same variable for rest of your program or module you declare it as a global variable, while if you want to use the variable in a specific function or method, you use a local variable while Python variable declaration.
+            </p>
+            <p>
+                Let’s understand this Python variable types with the difference between local and global variables in the below program.
+            </p>
+            <div>
+                <ol>
+                    <li>Let us define variable in Python where the variable “f” is <b>global</b> in scope and is assigned value 101 which is printed in output</li>
+                    <li>Variable f is again declared in function and assumes <b>local</b> scope. It is assigned value “I am learning Python.” which is printed out as an output. This Python declare variable is different from the global variable “f” defined earlier</li>
+                    <li>Once the function call is over, the local variable f is destroyed. At line 12, when we again, print the value of “f” is it displays the value of global variable f=101</li>
+                </ol>
+                <img src="https://www.guru99.com/images/Pythonnew/Python5.3.png" alt="image of a code">
+            </div>
+            <h4>Python 2 Example</h4>
+            <p>
+                Copy this code and run on the<a href="/editor"> editor</a>
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                <span style="color:grey"># Declare a variable and initialize it</span><br>
+                f = 101<br>
+                print(f)<br>
+                <span style="color:grey"># Global vs. local variables in functions</span><br>
+                def someFunction():<br>
+                <span style="color:grey"># global f</span><br>
+                    &emsp;f = 'I am learning Python'<br>
+                    &emsp;print(f)<br>
+                someFunction()<br>
+                print(f)
+            </div>
+            <p>
+                While Python variable declaration using the keyword <b>global</b>, you can reference the global variable inside a function.
+            </p>
+            <div>
+                <ol>
+                    <li>Variable “f” is <b>global</b> in scope and is assigned value 101 which is printed in output</li>
+                    <li>Variable f is declared using the keyword <b>global</b>. This is <b>NOT</b> a <b>local variable</b>, but the same global variable declared earlier. Hence when we print its value, the output is 101</li>
+                    <li>We changed the value of “f” inside the function. Once the function call is over, the changed value of the variable “f” persists. At line 12, when we again, print the value of “f” is it displays the value “changing global variable”</li>
+                </ol>
+                <img src="https://www.guru99.com/images/Pythonnew/Python5.4.png" alt="coding image">
+            </div>
+            <h4>Delete a variable</h4>
+            <p>
+                You can also delete Python variables using the command <b>del</b> “variable name”.
+            </p>
+            <p>
+                In the below example of Python delete variable, we deleted variable f, and when we proceed to print it, we get error “<b>variable name is not defined</b>” which means you have deleted the variable.<br>
+            </p>
+            <img src="https://www.guru99.com/images/Pythonnew/Python5.5.png">
+            <p>
+                Example of Python delete variable or Python clear variable :
+            </p>
+            <p>
+                Run in our <a href="/editor">editor</a>
+            </p>
+            <div class="alert alert-secondary" role="alert">
+                f = 11;<br>
+                print(f)<br>
+                del f<br>
+                print(f)
+            </div>
+            <p>
+                Summary:
+            </p>
+            <div>
+                <ul>
+                    <li>Variables are referred to “envelop” or “buckets” where information can be maintained and referenced. Like any other programming language Python also uses a variable to store the information.</li>
+                    <li>Variables can be declared by any name or even alphabets like a, aa, abc, etc.</li>
+                    <li>Variables can be re-declared even after you have declared them for once</li>
+                    <li>Python constants can be understood as types of variables that hold the value which can not be changed. Usually Python constants are referenced from other files. Python define constant is declared in a new or separate file which contains functions, modules, etc.</li>
+                    <li>Types of variables in Python or Python variable types : Local & Global</li>
+                    <li>Declare local variable when you want to use it for current function</li>
+                    <li>Declare Global variable when you want to use the same variable for rest of the program</li>
+                    <li>To delete a variable, it uses keyword “del”.</li>
+                </ul>
+            </div>
+            <p>
+                Go to <a href="/finaltestt"> final test</a>
+            </p>
+        </main>
+    </body>
+</html>

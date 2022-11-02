@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title>PyBiz: Home</title>
+
+    </head>
+
+    <body>
+        <header>
+         <nav class="bg-light border navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a href="/" class="navbar-brand"><span style="color: red;font-style: oblique;">P</span><span style="color: green;font-style: oblique;">y</span><span style="color: blue;font-style: oblique;">B</span><span style="color: green;font-style:oblique;">i</span><span style="color: red;font-style: oblique;">z</span></a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mt-2">
+                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                        </ul>
+                    {% endif %}
+                </header>
+{% block main %}
+    {% if not session["user_id"] %}
+    <main class="container-fluid py-5 text-center">
+        <div class="bd-example">
+            <div class="btn-group" id="db">
+                <button type="button" id="btn1" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Python Tutorial
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_intro.asp" target="_blank">Python Intro</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_getstarted.asp" target="_blank">Python Get started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_syntax.asp" target="_blank">Python Syntax</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_comments.asp" target="_blank">Python Comments</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_variables.asp" target="_blank">Python Variables</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_datatypes.asp"target="_blank">Python Data types</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_numbers.asp"target="_blank">Python Numbers</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_casting.asp"target="_blank">Python Casting</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_strings.asp"target="_blank">Python Strings</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_booleans.asp"target="_blank">Python Boolean</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_operators.asp"target="_blank">Python Operators</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_lists.asp"target="_blank">Python Lists</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_tuples.asp"target="_blank">Python Tuples</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_sets.asp"target="_blank">Python Sets</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_dictionaries.asp"target="_blank">Python Dictionaries</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_conditions.asp"target="_blank">Python If...Else</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_while_loops.asp"target="_blank">Python While loops</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_for_loops.asp"target="_blank">Python For loops</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_functions.asp"target="_blank">Python Functions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_lambda.asp"target="_blank">Python Lambda</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_arrays.asp"target="_blank">Python Arrays</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_classes.asp"target="_blank">Python Classes/Objects</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_inheritance.asp"target="_blank">Python Inheritance</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_iterators.asp"target="_blank">Python Iterators</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_scope.asp"target="_blank">Python Scope</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_modules.asp"target="_blank">Python Modules</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_datetime.asp"target="_blank">Python Dates</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_math.asp"target="_blank">Python Math</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_json.asp"target="_blank">Python JSON</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_regex.asp"target="_blank">Python RegEx</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_pip.asp"target="_blank">Python PIP</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_try_except.asp"target="_blank">Python Try...Except</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_user_input.asp"target="_blank">Python User Input</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_string_formatting.asp"target="_blank">Python String Formatting</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button type="button" id="btn2" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        File Handling
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank">Python File Handling</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_open.asp" target="_blank">Python Read files</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_write.asp" target="_blank">Python Write/Create Files</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_remove.asp" target="_blank">Python Delete Files</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn3" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Python MySQL
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_getstarted.asp" target="_blank">My SQL Get Started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_create_db.asp" target="_blank">My SQL Create Database</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_create_table.asp" target="_blank">My SQL Create Table</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_insert.asp" target="_blank">My SQL Insert</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_select.asp" target="_blank">My SQL Select</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_where.asp" target="_blank">My SQL Where</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_orderby.asp" target="_blank">My SQL Order By</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_delete.asp" target="_blank">My SQL Delete</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_drop_table.asp" target="_blank">My SQL Drop Table</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_update.asp" target="_blank">My SQL Update</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_limit.asp" target="_blank">My SQL Limit</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_join.asp" target="_blank">My SQL Join</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                 <button type="button" id="btn4" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Python Reference
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_functions.asp" target="_blank">Python Built-in Functions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_string.asp" target="_blank">Pyton String Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_list.asp" target="_blank">Python List Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_dictionary.asp" target="_blank">Python Dictionary Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_tuple.asp" target="_blank">Python Tuple Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_set.asp" target="_blank">Python Set Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_file.asp" target="_blank">Python File Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_keywords.asp" target="_blank">Python Keywords</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_exceptions.asp" target="_blank">Python Exceptions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_glossary.asp" target="_blank">Python Glossary</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn5" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Module Reference
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_random.asp" target="_blank">Random Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_requests.asp" target="_blank">Request Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_statistics.asp" target="_blank">Statistics Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_math.asp" target="_blank">Math Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_cmath.asp" target="_blank">cMath Module</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn6" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Machine Learning
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_getting_started.asp" target="_blank">Getting Started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_mean_median_mode.asp" target="_blank">Mean Median Mode</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_standard_deviation.asp" target="_blank">Standard Deviation</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_percentile.asp" target="_blank">Percentile</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_data_distribution.asp" target="_blank">Data Distribution</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_normal_data_distribution.asp" target="_blank">Normal Data Distribution</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_scatterplot.asp" target="_blank">Scatter Plot</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_linear_regression.asp" target="_blank">Linear Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_polynomial_regression.asp" target="_blank">Polynomial Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_multiple_regression.asp" target="_blank">Multiple Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_scale.asp" target="_blank">Scale</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_train_test.asp" target="_blank">Train/Test</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_decision_tree.asp" target="_blank">Decision Tree</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_confusion_matrix.asp" target="_blank">Confusion Matrix</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_hierarchial_clustering.asp" target="_blank">Hierarchial Clustering</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_logistic_regression.asp" target="_blank">Logistic Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_grid_search.asp" target="_blank">Grid Search</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_preprocessing.asp" target="_blank">Categorical Data</a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="card text-center">
+            <img src="https://trotons.com/wp-content/uploads/2019/09/q141s3xfs.png" class="card-img-top" alt="img">
+            <div class="card-body">
+                <h5 class="card-title">You can choose from the vast vajority of our topics listed above or take a course for beginners in python</h5>
+                <p class="card-text">Python is a computer programming language often used to build websites and software, automate tasks, and conduct data analysis. Python is a general-purpose language, meaning it can be used to create a variety of different programs and isn't specialized for any specific problems.</p>
+                <a href="/main" class="btn btn-primary stretched-link">Go to course</a>
+             </div>
+        </div>
+    </main>
+    <footer>
+            <h3 style="text-align:center;">What is Python?</h3>
+            <p style="font-size:20px;">
+                Python is an object-oriented (based around data), high-level (easier for humans to understand) programming language. First launched in 1992, it’s built in a way that it’s relatively intuitive to write and understand. As such, it’s an ideal coding language for those who want rapid development.
+            </p>
+            <p style="font-size:20px;">
+                If you’re wondering who uses Python, you’ll find that many of the biggest organisations in the world implement it in some form. NASA, Google, Netflix, Spotify, and countless more all use the language to help power their services.
+            </p>
+            <br>
+            <div>
+                <h3 style="text-align:center;">Why is Python so popular? </h3>
+                <br>
+                <p>
+                    According to <a href="https://www.tiobe.com/tiobe-index/"> the TIOBE index</a>, which measures the popularity of programming languages, Python is the third most popular programming language in the world, behind only Java and C. There are many reasons for the ubiquity of Python, including:
+                </p>
+                <div style="font-size:20px;">
+                    <ul>
+                        <li><b>Its ease of use.</b> For those who are new to coding and programming, Python can be an excellent first step. It’s relatively easy to learn, making it a great way to start building your programming knowledge.</li>
+                        <li><b>Its simple syntax.</b> Python is relatively easy to read and understand, as its syntax is more like English. Its straightforward layout means that you can work out what each line of code is doing.</li>
+                        <li><b>Its thriving community.</b> As it’s an open-source language, anyone can use Python to code. What’s more, there is a community that supports and develops the ecosystem, adding their own contributions and libraries.</li>
+                        <li><b>Its versatility.</b> There are many uses for Python. Whether you’re interested in data visualisation, artificial intelligence or web development, you can find a use for the language.</li>
+                    </ul>
+                </div>
+            </div>
+            <h3 style="text-align:center;">Why you should learn Python</h3>
+            <p style="font-size:20px;">
+                So, we know why Python is so popular at the moment, but why should you learn how to use it? Aside from the ease of use and versatility mentioned above, there are several good reasons to learn Python
+            </p>
+            <div style="font-size:20px;">
+                <ol>
+                    <li><h3>Python is beginner friendly</h3></li>
+                    <p>
+                        Why learn Python? For starters, the language is an excellent place to begin if you’re new to coding. One of the biggest hurdles for aspiring coders is the daunting task of learning a new language that looks nothing like what they’re used to reading and writing. However, Python features English syntax and was designed to be concise and easy to read — all of which makes it more accessible to first-time coders than many other languages.
+                    </p>
+                    <p>
+                        Python is also easy to learn because it is an interpreted programming language. This means that you can run each line of code once you have finished writing it, allowing you to immediately check it and make adjustments if needed — a big help to those who are still learning and a time-saver for coders everywhere.
+                    </p>
+                    <li><h3>Python Is Versatile </h3></li>
+                    <p>
+                        Python is highly versatile. You can use it for both small and complex tasks, and it is used across many different industries — from its more common applications in data science and software engineering to environments like mobile app development, artificial intelligence, and machine learning. This multifaceted use is due to the wide array of Python libraries available (over 125,000, to be specific). Libraries are collections of pre-written code in a particular language that anyone can access, meaning that once you’ve learned the basics of Python, you’ll likely be able to understand and use a huge amount of code developed by other programmers.
+                    </p>
+                    <p>
+                        Another important aspect of Python’s versatility is its ability to run with other programming languages. A few common examples of Python implementation with other languages are Jython (Python integrated with Java) and CPython (Python integrated with C). Lastly, Python offers cross-platform functionality, meaning that it will function properly whether you’re working with Windows, Linux, or macOS.
+                    </p>
+                    <li><h3>Python Developer Roles Are in High Demand </h3></li>
+                    <p>
+                        Python developer roles are in high demand, as many major companies — including DropBox, Netflix, and Facebook — use it. Google has even made its own Python style guide. Python developer jobs are also comparatively lucrative. According to Indeed*, Python developers earn an average salary of $108,391, which makes it the fourth-most lucrative programming language behind Ruby ($120,174), C++ ($114,000), and JavaScript ($111,623). Python developers also have the opportunity to earn a high salary with less experience, according to StackOverflow.
+                    </p>
+                    <li><h3>Python Boasts a Supportive Community</h3></li>
+                    <p>
+                        When you’re learning a new programming language — particularly after you’ve completed your bootcamp course or degree — you’ll want to feel confident that you have a community of programmers you can turn to with questions when an issue comes up. One major benefit of Python is its robust and supportive online community, as evidenced by the 1.5 Million GitHub repositories that make Python the platform’s second-largest community. Python also has its own network of robust community forums, where users can discuss everything from workflow to software development, and Python users often organize meetups around the world to build community and knowledge bases.
+                    </p>
+                    <li><h3>Python Is the Fastest-Growing Programming Language </h3></li>
+                    <p>
+                        When it comes to Python’s popularity and growth rate, the numbers don’t lie. According to the PYPL PopularitY of Programming Language Index, Python is the most-searched programming language on the internet — and that doesn’t look like it will be changing any time soon. According to Stack Overflow, Python is also the fastest-growing programming language, and TIOBE gave it the 2020 Programming Language of the Year award as it gained popularity faster than any other language. Part of this acclaim is due to Python’s usefulness in the world of data science; as fields like machine learning, data modeling, and AI grow, so too does the demand for Python-related skills. All of this means that, if you’re looking for a new programming language to learn — or looking to transition into the field of programming — Python is a wise choice.
+                    </p>
+                </ol>
+            </div>
+            <div>
+                <h3 style="text-align:center;">Interested to learn Python?</h3>
+                <h4 style="margin: 3px;">
+                    Take Harvard University free Python course
+                </h4>
+                <p style="font-size:20px;">
+                    An introduction to programming using a language called Python. Learn how to read and write code as well as how to test and “debug” it. Designed for students with or without prior programming experience who’d like to learn Python specifically. Learn about functions, arguments, and return values (oh my!); variables and types; conditionals and Boolean expressions; and loops. Learn how to handle exceptions, find and fix bugs, and write unit tests; use third-party libraries; validate and extract data with regular expressions; model real-world entities with classes, objects, methods, and properties; and read and write files. Hands-on opportunities for lots of practice. Exercises inspired by real-world programming problems. No software required except for a web browser, or you can write code on your own PC or Mac.
+                </p>
+                <h4>How to take the course</h4>
+                <p style="font-size:20px;">
+                    Visit this <a href="https://cs50.harvard.edu/python/2022/">link</a> to learn more
+                </p>
+            </div>
+    </footer>
+    {% else %}
+    <br>
+    <a style="float:right;" href="/course">Continue course</a>
+    <br>
+    <br>
+    <div style="text-align:center;" class="bd-example">
+            <div class="btn-group" id="db">
+                <button type="button" id="btn1" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Python Tutorial
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_intro.asp" target="_blank">Python Intro</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_getstarted.asp" target="_blank">Python Get started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_syntax.asp" target="_blank">Python Syntax</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_comments.asp" target="_blank">Python Comments</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_variables.asp" target="_blank">Python Variables</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_datatypes.asp"target="_blank">Python Data types</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_numbers.asp"target="_blank">Python Numbers</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_casting.asp"target="_blank">Python Casting</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_strings.asp"target="_blank">Python Strings</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_booleans.asp"target="_blank">Python Boolean</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_operators.asp"target="_blank">Python Operators</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_lists.asp"target="_blank">Python Lists</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_tuples.asp"target="_blank">Python Tuples</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_sets.asp"target="_blank">Python Sets</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_dictionaries.asp"target="_blank">Python Dictionaries</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_conditions.asp"target="_blank">Python If...Else</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_while_loops.asp"target="_blank">Python While loops</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_for_loops.asp"target="_blank">Python For loops</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_functions.asp"target="_blank">Python Functions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_lambda.asp"target="_blank">Python Lambda</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_arrays.asp"target="_blank">Python Arrays</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_classes.asp"target="_blank">Python Classes/Objects</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_inheritance.asp"target="_blank">Python Inheritance</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_iterators.asp"target="_blank">Python Iterators</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_scope.asp"target="_blank">Python Scope</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_modules.asp"target="_blank">Python Modules</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_datetime.asp"target="_blank">Python Dates</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_math.asp"target="_blank">Python Math</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_json.asp"target="_blank">Python JSON</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_regex.asp"target="_blank">Python RegEx</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_pip.asp"target="_blank">Python PIP</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_try_except.asp"target="_blank">Python Try...Except</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_user_input.asp"target="_blank">Python User Input</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_string_formatting.asp"target="_blank">Python String Formatting</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button type="button" id="btn2" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        File Handling
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank">Python File Handling</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_open.asp" target="_blank">Python Read files</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_write.asp" target="_blank">Python Write/Create Files</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_file_remove.asp" target="_blank">Python Delete Files</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn3" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Python MySQL
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_getstarted.asp" target="_blank">My SQL Get Started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_create_db.asp" target="_blank">My SQL Create Database</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_create_table.asp" target="_blank">My SQL Create Table</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_insert.asp" target="_blank">My SQL Insert</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_select.asp" target="_blank">My SQL Select</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_where.asp" target="_blank">My SQL Where</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_orderby.asp" target="_blank">My SQL Order By</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_delete.asp" target="_blank">My SQL Delete</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_drop_table.asp" target="_blank">My SQL Drop Table</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_update.asp" target="_blank">My SQL Update</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_limit.asp" target="_blank">My SQL Limit</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_mysql_join.asp" target="_blank">My SQL Join</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                 <button type="button" id="btn4" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Python Reference
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_functions.asp" target="_blank">Python Built-in Functions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_string.asp" target="_blank">Pyton String Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_list.asp" target="_blank">Python List Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_dictionary.asp" target="_blank">Python Dictionary Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_tuple.asp" target="_blank">Python Tuple Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_set.asp" target="_blank">Python Set Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_file.asp" target="_blank">Python File Methods</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_keywords.asp" target="_blank">Python Keywords</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_exceptions.asp" target="_blank">Python Exceptions</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ref_glossary.asp" target="_blank">Python Glossary</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn5" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Module Reference
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_random.asp" target="_blank">Random Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_requests.asp" target="_blank">Request Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_statistics.asp" target="_blank">Statistics Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_math.asp" target="_blank">Math Module</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/module_cmath.asp" target="_blank">cMath Module</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" id="db">
+                <button type="button" id="btn6" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Machine Learning
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_getting_started.asp" target="_blank">Getting Started</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_mean_median_mode.asp" target="_blank">Mean Median Mode</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_standard_deviation.asp" target="_blank">Standard Deviation</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_percentile.asp" target="_blank">Percentile</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_data_distribution.asp" target="_blank">Data Distribution</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_normal_data_distribution.asp" target="_blank">Normal Data Distribution</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_scatterplot.asp" target="_blank">Scatter Plot</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_linear_regression.asp" target="_blank">Linear Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_polynomial_regression.asp" target="_blank">Polynomial Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_multiple_regression.asp" target="_blank">Multiple Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_scale.asp" target="_blank">Scale</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_train_test.asp" target="_blank">Train/Test</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_decision_tree.asp" target="_blank">Decision Tree</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_confusion_matrix.asp" target="_blank">Confusion Matrix</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_hierarchial_clustering.asp" target="_blank">Hierarchial Clustering</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_logistic_regression.asp" target="_blank">Logistic Regression</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_grid_search.asp" target="_blank">Grid Search</a></li>
+                    <li><a class="dropdown-item" href="https://www.w3schools.com/python/python_ml_preprocessing.asp" target="_blank">Categorical Data</a></li>
+                </ul>
+            </div>
+        </div>
+    <main>
+        <br>
+        <h3 style="margin-left:2px;">Python projects you should try as a python developer</h3>
+        <br>
+        <img style="display:block; margin-left:auto; margin-right:auto; width: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZRPC0Zvh98KHBQfN7JHOlCZ9rbXi8fO7eQ&usqp=CAU" alt="python image">
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>1. <a href ="https://rodmilstead.com/cp/python-mad-libs/"> Mad Libs Generator</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This Python beginner project is a good start for beginners as it makes use of strings, variables, and concatenation. The Mad Libs Generator manipulates input data, which could be anything: an adjective, a pronoun, or verb. After taking in the input, the program takes the data and arranges it to build a story. This is a very cool Python project to try out if you’re new to coding.</span><br>
+                <br>
+            </p>
+            <br>
+            <span style="float:left;"><b>Sample code: </b></span>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                        """ Mad Libs Generator<br>
+
+                        ----------------------------------------<br>
+
+                        """<br>
+
+                        # Loop back to this point once code finishes<br>
+
+                        loop = 1 <br>
+
+                        while (loop < 10): <br>
+
+                        # All the questions that the program asks the user <br>
+
+                        noun = input("Choose a noun: ")<br>
+
+                        p_noun = input("Choose a plural noun: ")<br>
+
+                        noun2 = input("Choose a noun: ")<br>
+
+                        place = input("Name a place: ")<br>
+
+                        adjective = input("Choose an adjective (Describing word): ")<br>
+
+                        noun3 = input("Choose a noun: ")<br>
+
+                        #Displays the story based on the users input<br>
+
+                        print ("------------------------------------------")<br>
+
+                        print ("Be kind to your",noun,"- footed", p_noun)<br>
+
+                        print ("For a duck may be somebody's", noun2,",")<br>
+
+                        print ("Be kind to your",p_noun,"in",place)<br>
+
+                        print ("Where the weather is always",adjective,".")<br>
+
+                        print ()<br>
+
+                        print ("You may think that is this the",noun3,",")<br>
+
+                        print ("Well it is.")<br>
+
+                        print ("------------------------------------------")<br>
+
+                        # Loop back to "loop = 1"<br>
+
+                        loop = loop + 1<br>
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>2. <a href ="https://www.youtube.com/watch?v=J9RQcF7hhgA"> Number Guessing</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This project is a fun game that generates a random number in a certain specified range and the user must guess the number after receiving hints. Every time a user’s guess is wrong they are prompted with more hints to make it easier — at the cost of reducing the score.</span>
+            </p>
+            <p>
+                <span style="font-size: 20px;">The program also requires functions to check if an actual number is entered by the user, and finds the difference between the two numbers. </span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                """ Number Guessing Game<br>
+
+                ----------------------------------------<br>
+
+                """<br>
+
+                import random<br>
+
+                attempts_list = []<br>
+
+                def show_score():<br>
+
+                if len(attempts_list) <= 0:<br>
+
+                print("There is currently no high score, it's yours for the taking!")<br>
+
+                else:<br>
+
+                print("The current high score is {} attempts".format(min(attempts_list)))<br>
+
+                def start_game():<br>
+
+                random_number = int(random.randint(1, 10))<br>
+
+                print("Hello traveler! Welcome to the game of guesses!")<br>
+
+                player_name = input("What is your name? ")<br>
+
+                wanna_play = input("Hi, {}, would you like to play the guessing game? (Enter Yes/No) ".format(player_name))<br>
+
+                # Where the show_score function USED to be<br>
+
+                attempts = 0<br>
+
+                show_score()<br>
+
+                while wanna_play.lower() == "yes":<br>
+
+                try:<br>
+
+                guess = input("Pick a number between 1 and 10 ")<br>
+
+                if int(guess) < 1 or int(guess) > 10:<br>
+
+                raise ValueError("Please guess a number within the given range")<br>
+
+                if int(guess) == random_number:<br>
+
+                print("Nice! You got it!")<br>
+
+                attempts += 1<br>
+
+                attempts_list.append(attempts)<br>
+
+                print("It took you {} attempts".format(attempts))<br>
+
+                play_again = input("Would you like to play again? (Enter Yes/No) ")<br>
+
+                attempts = 0<br>
+
+                show_score()<br>
+
+                random_number = int(random.randint(1, 10))<br>
+
+                if play_again.lower() == "no":<br>
+
+                print("That's cool, have a good one!")<br>
+
+                break<br>
+
+                elif int(guess) > random_number:<br>
+
+                print("It's lower")<br>
+
+                attempts += 1<br>
+
+                elif int(guess) < random_number:<br>
+
+                print("It's higher")<br>
+
+                attempts += 1<br>
+
+                except ValueError as err:<br>
+
+                print("Oh no!, that is not a valid value. Try again...")<br>
+
+                print("({})".format(err))<br>
+
+                else:<br>
+
+                print("That's cool, have a good one!")<br>
+
+                if __name__ == '__main__':<br>
+
+                start_game()<br>
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>3. <a href ="https://www.youtube.com/watch?v=GhPZHvhvlsk"> Rock, Paper, Scissors</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This rock paper scissors program uses a number of functions so this is a good way of getting that critical concept under your belt.</span>
+                <ul>
+                    <li><b>Random function:</b> to generate rock, paper, or scissors. </li>
+                    <li><b>Valid function:</b> to check the validity of the move.</li>
+                    <li><b>Result function:</b> to declare the winner of the round.</li>
+                    <li><b>Scorekeeper:</b> to keep track of the score.</li>
+                </ul>
+                <br>
+            </p>
+            <p>
+                <span style="font-size:20px;">The program requires the user to make the first move before it makes a move. The input could be a string or an alphabet representing either rock, paper or scissors. After evaluating the input string, a winner is decided by the result function and the score of the round is updated by the scorekeeper function. </span>
+            </p>
+            <br>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                """ Rock Paper Scissors<br>
+
+                ----------------------------------------<br>
+
+                """<br>
+
+                import random<br>
+
+                import os<br>
+
+                import re<br>
+
+                os.system('cls' if os.name=='nt' else 'clear')<br>
+
+                while (1 < 2):<br>
+
+                print ("\n")<br>
+
+                print ("Rock, Paper, Scissors - Shoot!")<br>
+
+                userChoice = input("Choose your weapon [R]ock], [P]aper, or [S]cissors: ")<br>
+
+                if not re.match("[SsRrPp]", userChoice):<br>
+
+                print ("Please choose a letter:")<br>
+
+                print ("[R]ock, [S]cissors or [P]aper.")<br>
+
+                continue<br>
+
+                # Echo the user's choice<br>
+
+                print ("You chose: " + userChoice)<br>
+
+                choices = ['R', 'P', 'S']<br>
+
+                opponenetChoice = random.choice(choices)<br>
+
+                print ("I chose: " + opponenetChoice)<br>
+
+                if opponenetChoice == str.upper(userChoice):<br>
+
+                print ("Tie! ")<br>
+
+                #if opponenetChoice == str("R") and str.upper(userChoice) == "P"<br>
+
+                elif opponenetChoice == 'R' and userChoice.upper() == 'S':<br>
+
+                print ("Scissors beats rock, I win! ")<br>
+
+                continue<br>
+
+                elif opponenetChoice == 'S' and userChoice.upper() == 'P':<br>
+
+                print ("Scissors beats paper! I win! ")<br>
+
+                continue<br>
+
+                elif opponenetChoice == 'P' and userChoice.upper() == 'R':<br>
+
+                print ("Paper beat rock, I win!")<br>
+
+                continue<br>
+
+                else:<br>
+
+                print ("You win!")<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>4. <a href ="https://www.youtube.com/watch?v=KxMQeK09d2k"> Dice Roll Generator</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size:20px;">This dice roll generator is a fairly simple program that makes use of the random function to simulate dice rolls. You can change the maximum value to any number, making it possible to simulate polyhedral dice used in many board games and roleplaying games.</span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                import random<br>
+
+                #Enter the minimum and maximum limits of the dice rolls below<br>
+
+                min_val = 1<br>
+
+                max_val = 6<br>
+
+                #the variable that stores the user’s decision<br>
+
+                roll_again = "yes"<br>
+
+                #The dice roll loop if the user wants to continue<br>
+
+                while roll_again == "yes" or roll_again == "y":<br>
+
+                print("Dices rolling...")<br>
+
+                print("The values are :")<br>
+
+                #Printing the randomly generated variable of the first dice<br>
+
+                print(random.randint(min_val, max_val))<br>
+
+                #Printing the randomly generated variable of the second dice<br>
+
+                print(random.randint(min_val, max_val))<br>
+
+                #Here the user enters yes or y to continue and any other input ends the program<br>
+
+                roll_again = input("Roll the Dices Again?")<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>5. <a href ="https://www.youtube.com/watch?v=DE-ye0t0oxE"> Binary Search Algorithm</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">The binary search algorithm is a very important one, and requires you to create a list of numbers between 0 and an upper limit, with every succeeding number having a difference of 2 between them.</span>
+            </p>
+            <p>
+                <span style="font-size: 20px;">When the user inputs a random number to be searched the program begins its search by dividing the list into two halves. First, the first half is searched for the required number and if found, the other half is rejected and vice versa. The search continues until the number is found or the subarray size becomes zero.</span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                # Recursive Binary Search algorithm in Python<br>
+
+                def binarySearch(array, x, low, high):<br>
+
+                if high >= low:<br>
+
+                mid = low + (high - low)//2<br>
+
+                # If found at mid, return the value<br>
+
+                if array[mid] == x:<br>
+
+                return mid<br>
+
+                # Search the first half<br>
+
+                elif array[mid] > x:<br>
+
+                return binarySearch(array, x, low, mid-1)<br>
+
+                # Search the second half<br>
+
+                else:<br>
+
+                return binarySearch(array, x, mid + 1, high)<br>
+
+                else:<br>
+
+                return -1<br>
+
+                array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<br>
+
+                x = int(input("Enter a number between 1 and 10:"))<br>
+
+                result = binarySearch(array, x, 0, len(array)-1)<br>
+
+                if result != -1:<br>
+
+                print("Element is present at position" + str(result))<br>
+
+                else:<br>
+
+                print("Element not found")<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>6. <a href ="https://www.youtube.com/watch?v=QZPv1y2znZo"> Calculator</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This project teaches you to design a graphical interface and is a good way to get familiar with a library like Tkinter. This library lets you create buttons to perform different operations and display results on the screen. </span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                # Calculator<br>
+
+                def addition ():<br>
+
+                print("Addition")<br>
+
+                n = float(input("Enter the number: "))<br>
+
+                t = 0 #Total number enter<br>
+
+                ans = 0<br>
+
+                while n != 0:<br>
+
+                ans = ans + n<br>
+
+                t+=1<br>
+
+                n = float(input("Enter another number (0 to calculate): "))<br>
+
+                return [ans,t]<br>
+
+                def subtraction ():<br>
+
+                print("Subtraction");<br>
+
+                n = float(input("Enter the number: "))<br>
+
+                t = 0 #Total number enter<br>
+
+                sum = 0<br>
+
+                while n != 0:<br>
+
+                ans = ans - n<br>
+
+                t+=1<br>
+
+                n = float(input("Enter another number (0 to calculate): "))<br><br>
+
+                return [ans,t]<br>
+
+                def multiplication ():<br>
+
+                print("Multiplication")<br>
+
+                n = float(input("Enter the number: "))<br>
+
+                t = 0 #Total number enter<br>
+
+                ans = 1<br>
+
+                while n != 0:<br>
+
+                ans = ans * n<br>
+
+                t+=1<br>
+
+                n = float(input("Enter another number (0 to calculate): "))<br>
+
+                return [ans,t]<br>
+
+                def average():<br>
+
+                an = []<br>
+
+                an = addition()<br>
+
+                t = an[1]<br>
+
+                a = an[0]<br>
+
+                ans = a / t<br>
+
+                return [ans,t]<br>
+
+                # main...<br>
+
+                while True:<br>
+
+                list = []<br>
+
+                print(" My first python program!")<br>
+
+                print(" Simple Calculator in python by Malik Umer Farooq")<br>
+
+                print(" Enter 'a' for addition")<br>
+
+                print(" Enter 's' for substraction")<br>
+
+                print(" Enter 'm' for multiplication")<br>
+
+                print(" Enter 'v' for average")<br>
+
+                print(" Enter 'q' for quit")<br>
+
+                c = input(" ")<br>
+
+                if c != 'q':<br>
+
+                if c == 'a':<br>
+
+                list = addition()<br>
+
+                print("Ans = ", list[0], " total inputs ",list[1])<br>
+
+                elif c == 's':<br>
+
+                list = subtraction()<br>
+
+                print("Ans = ", list[0], " total inputs ",list[1])<br>
+
+                elif c == 'm':<br>
+
+                list = multiplication()<br>
+
+                print("Ans = ", list[0], " total inputs ",list[1])<br>
+
+                elif c == 'v':<br>
+
+                list = average()<br>
+
+                print("Ans = ", list[0], " total inputs ",list[1])<br>
+
+                else:<br>
+
+                print ("Sorry, invilid character")<br>
+
+                else:<br>
+
+                break<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>7. <a href ="https://www.youtube.com/watch?v=q9LmCmLa2Io"> Alarm Clock</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This Command Line Interface (CLI) Python application is a good step up for a beginner developer. More than just setting off an alarm, this program allows certain YouTube links to be added to a text file. When a user sets an alarm, the code picks a random video and starts playing it.</span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                """ Alarm Clock<br>
+
+                ----------------------------------------<br>
+
+                """<br>
+
+                import datetime<br>
+
+                import os<br>
+
+                import time<br>
+
+                import random<br>
+
+                import webbrowser<br>
+
+                # If video URL file does not exist, create one<br>
+
+                if not os.path.isfile("youtube_alarm_videos.txt"):<br>
+
+                print('Creating "youtube_alarm_videos.txt"...')<br>
+
+                with open("youtube_alarm_videos.txt", "w") as alarm_file:<br>
+
+                alarm_file.write("https://www.youtube.com/watch?v=anM6uIZvx74")<br>
+
+                def check_alarm_input(alarm_time):<br>
+
+                """Checks to see if the user has entered in a valid alarm time"""<br>
+
+                if len(alarm_time) == 1: # [Hour] Format<br>
+
+                if alarm_time[0] < 24 and alarm_time[0] >= 0:<br>
+
+                return True<br>
+
+                if len(alarm_time) == 2: # [Hour:Minute] Format<br>
+
+                if alarm_time[0] < 24 and alarm_time[0] >= 0 and \<br>
+
+                alarm_time[1] < 60 and alarm_time[1] >= 0:<br>
+
+                return True<br>
+
+                elif len(alarm_time) == 3: # [Hour:Minute:Second] Format<br>
+
+                if alarm_time[0] < 24 and alarm_time[0] >= 0 and \<br>
+
+                alarm_time[1] < 60 and alarm_time[1] >= 0 and \<br>
+
+                alarm_time[2] < 60 and alarm_time[2] >= 0:<br>
+
+                return True<br>
+
+                return False<br>
+
+                # Get user input for the alarm time<br>
+
+                print("Set a time for the alarm (Ex. 06:30 or 18:30:00)")<br>
+
+                while True:<br>
+
+                alarm_input = input(">> ")<br>
+
+                try:<br>
+
+                alarm_time = [int(n) for n in alarm_input.split(":")]<br>
+
+                if check_alarm_input(alarm_time):<br>
+
+                break<br>
+
+                else:<br>
+
+                raise ValueError<br>
+
+                except ValueError:<br>
+
+                print("ERROR: Enter time in HH:MM or HH:MM:SS format")<br>
+
+                # Convert the alarm time from [H:M] or [H:M:S] to seconds<br>
+
+                seconds_hms = [3600, 60, 1] # Number of seconds in an Hour, Minute, and Second<br>
+
+                alarm_seconds = sum([a*b for a,b in zip(seconds_hms[:len(alarm_time)], alarm_time)])<br>
+
+                # Get the current time of day in seconds<br>
+
+                now = datetime.datetime.now()<br>
+
+                current_time_seconds = sum([a*b for a,b in zip(seconds_hms, [now.hour, now.minute, now.second])])<br>
+
+                # Calculate the number of seconds until alarm goes off<br>
+
+                time_diff_seconds = alarm_seconds - current_time_seconds<br>
+
+                # If time difference is negative, set alarm for next day<br>
+
+                if time_diff_seconds < 0:<br>
+
+                time_diff_seconds += 86400 # number of seconds in a day<br>
+
+                # Display the amount of time until the alarm goes off<br>
+
+                print("Alarm set to go off in %s" % datetime.timedelta(seconds=time_diff_seconds))<br>
+
+                # Sleep until the alarm goes off<br>
+
+                time.sleep(time_diff_seconds)<br>
+
+                # Time for the alarm to go off<br>
+
+                print("Wake Up!")<br>
+
+                # Load list of possible video URLs<br>
+
+                with open("youtube_alarm_videos.txt", "r") as alarm_file:<br>
+
+                videos = alarm_file.readlines()<br>
+
+                # Open a random video from the list<br>
+
+                webbrowser.open(random.choice(videos))<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>8. <a href ="https://www.youtube.com/watch?v=BHh654_7Cmw"> Tic-Tac-Toe</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">Tic-Tac-Toe is a two-player game that involves a nine-square grid. Each player marks their space with an O or an X alternately. The player who manages to mark three Os or Xs diagonally, horizontally, or vertically wins. Each player must block their opponent while attempting to make their chain. For this project, we use the Pygame Python library. </span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                """ Tic Tac Toe<br>
+
+                ----------------------------------------<br>
+
+                """<br>
+
+                import random<br>
+
+                import sys<br>
+
+                board=[i for i in range(0,9)]<br>
+
+                player, computer = '',''<br>
+
+                # Corners, Center and Others, respectively<br>
+
+                moves=((1,7,3,9),(5,),(2,4,6,8))<br>
+
+                # Winner combinations<br>
+
+                winners=((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))<br>
+
+                # Table<br>
+
+                tab=range(1,10)<br>
+
+                def print_board():<br>
+
+                x=1<br>
+
+                for i in board:<br>
+
+                end = ' | '<br>
+
+                if x%3 == 0:<br>
+
+                end = ' \n'<br>
+
+                if i != 1: end+='---------\n';<br>
+
+                char=' '<br>
+
+                if i in ('X','O'): char=i;<br>
+
+                x+=1<br>
+
+                print(char,end=end)<br>
+
+                def select_char():<br>
+
+                chars=('X','O')<br>
+
+                if random.randint(0,1) == 0:<br>
+
+                return chars[::-1]<br>
+
+                return chars<br>
+
+                def can_move(brd, player, move):<br>
+
+                if move in tab and brd[move-1] == move-1:<br>
+
+                return True<br>
+
+                return False<br>
+
+                def can_win(brd, player, move):<br>
+
+                places=[]<br>
+
+                x=0<br>
+
+                for i in brd:<br>
+
+                if i == player: places.append(x);<br>
+
+                x+=1<br>
+
+                win=True<br>
+
+                for tup in winners:<br>
+
+                win=True<br>
+
+                for ix in tup:<br>
+
+                if brd[ix] != player:<br>
+
+                win=False<br>
+
+                break<br>
+
+                if win == True:<br>
+
+                break<br>
+
+                return win<br>
+
+                def make_move(brd, player, move, undo=False):<br>
+
+                if can_move(brd, player, move):<br>
+
+                brd[move-1] = player<br>
+
+                win=can_win(brd, player, move)<br>
+
+                if undo:<br>
+
+                brd[move-1] = move-1<br>
+
+                return (True, win)<br>
+
+                return (False, False)<br>
+
+                # AI goes here<br>
+
+                def computer_move():<br>
+
+                move=-1<br>
+
+                # If I can win, others do not matter.<br>
+
+                for i in range(1,10):<br>
+
+                if make_move(board, computer, i, True)[1]:<br>
+
+                move=i<br>
+
+                break<br>
+
+                if move == -1:<br>
+
+                # If player can win, block him.<br>
+
+                for i in range(1,10):<br>
+
+                if make_move(board, player, i, True)[1]:<br>
+
+                move=i<br>
+
+                break<br>
+
+                if move == -1:<br>
+
+                # Otherwise, try to take one of desired places.<br>
+
+                for tup in moves:<br>
+
+                for mv in tup:<br>
+
+                if move == -1 and can_move(board, computer, mv):<br>
+
+                move=mv<br>
+
+                break<br>
+
+                return make_move(board, computer, move)<br>
+
+                def space_exist():<br>
+
+                return board.count('X') + board.count('O') != 9<br>
+
+                player, computer = select_char()<br>
+
+                print('Player is [%s] and computer is [%s]' % (player, computer))<br>
+
+                result='%%% Deuce ! %%%'<br>
+
+                while space_exist():<br>
+
+                print_board()<br>
+
+                print('#Make your move ! [1-9] : ', end='')<br>
+
+                move = int(input())<br>
+
+                moved, won = make_move(board, player, move)<br>
+
+                if not moved:<br>
+
+                print(' >> Invalid number ! Try again !')<br>
+
+                continue<br>
+
+                if won:<br>
+
+                result='*** Congratulations ! You won ! ***'<br>
+
+                break<br>
+
+                elif computer_move()[1]:<br>
+
+                result='=== You lose ! =='<br>
+
+                break;<br>
+
+                print_board()<br>
+
+                print(result)<br>
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>9. <a href ="https://www.youtube.com/watch?v=KZkQFab3NnA"> Countdown Timer</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">This countdown timer program takes in the number of seconds as input, and countdowns second by second until it displays a message. It implements the time module, which is worth knowing about and a fairly easy module to make of.</span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                import time<br>
+
+                # The countdown function is defined below<br>
+
+                def countdown(t):<br>
+
+                while t:<br>
+
+                mins, secs = divmod(t, 60)<br>
+
+                timer = '{:02d}:{:02d}'.format(mins, secs)<br>
+
+                print(timer, end="\r")<br>
+
+                time.sleep(1)<br>
+
+                t -= 1<br>
+
+                print('Lift off!')<br>
+
+                # Ask the user to enter the countdown period in seconds<br>
+
+                t = input("Enter the time in seconds: ")<br>
+
+                # function call<br>
+
+                countdown(int(t))<br>
+
+
+            </div>
+        </div>
+        <div>
+            <p>
+                <span style="float:left; font-size:22px;"><b>10. <a href ="https://www.youtube.com/watch?v=cVZMah9kEjI"> Merge Sort</a></b></span><br>
+            </p>
+            <p>
+                <span style="font-size: 20px;">Sorting is an important concept to have in any programmer’s toolbelt, and merge sort is a particularly important one. While there are sorting functions like insertion sort, bubble sort and selection sort, merge sort is worth knowing because it is effective for sorting large amounts of data.</span>
+            </p>
+            <p>
+                <span style="float:left;"><b>Sample code: </b></span>
+            </p>
+            <br>
+            <br>
+            <div class="alert alert-dark" role="alert">
+                def merge_sort(unsorted_list):<br>
+
+                if len(unsorted_list) <= 1:<br>
+
+                return unsorted_list<br>
+
+                # Find the midpoint and divide the list into two<br>
+
+                middle = len(unsorted_list) // 2<br>
+
+                left_list = unsorted_list[:middle]<br>
+
+                right_list = unsorted_list[middle:]<br>
+
+                left_list = merge_sort(left_list)<br>
+
+                right_list = merge_sort(right_list)<br>
+
+                return list(merge(left_list, right_list))<br>
+
+                # Merge the sorted halves<br>
+
+                def merge(left_half,right_half):<br>
+
+                res = []<br>
+
+                while len(left_half) != 0 and len(right_half) != 0:<br>
+
+                if left_half[0] < right_half[0]:<br>
+
+                res.append(left_half[0])<br>
+
+                left_half.remove(left_half[0])<br>
+
+                else:<br>
+
+                res.append(right_half[0])<br>
+
+                right_half.remove(right_half[0])<br>
+
+                if len(left_half) == 0:<br>
+
+                res = res + right_half<br>
+
+                else:<br>
+
+                res = res + left_half<br>
+
+                return res<br>
+
+                unsorted_list = [64, 34, 25, 12, 22, 11, 90]<br>
+
+                print(merge_sort(unsorted_list))<br>
+
+            </div>
+        </div>
+        <span style="font-size:22px;"><b>Conclusion:</b></span>
+        <p>
+            <span style="font-size: 20px;">There you go — ten beginner Python projects that can be a lot of fun at the same time. These projects put your theoretical learning to the test and help better your practical handling of Python knowledge. </span>
+        </p>
+    </main>
+    {% endif %}
+
+    <footer>
+
+    </footer>
+{% endblock %}

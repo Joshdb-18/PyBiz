@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Courses
+{% endblock %}
+
+{% block main %}
+    {% with msg = get_flashed_messages() %}
+        {% if msg %}
+            <header class="alert alert-primary border text-center" role="alert">
+                    {{ msg }}
+            </header>
+        {% endif %}
+    {% endwith %}
+
+    <form class="row g-3" action="/main" method="post">
+        <h3>
+            Choose a course
+        </h3>
+        <div class="col-md-4">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="inputEmail4">
+         </div>
+         <div class="col-md-4">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="inputPassword4">
+         </div>
+         <div class="col-md-4">
+            <label for="inputCity" class="form-label">Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="inputCity">
+         </div>
+         <div class="col-md-4">
+            <label for="username" class="form-label">Userame</label>
+            <input type="text" name="username" class="form-control" id="inputPassword4">
+         </div>
+         <!--<div class="col-md-4">-->
+         <!--   <label for="inputCity" class="form-label">Username</label>-->
+         <!--   <input type="text" name="username" class="form-control" id="inputCity">-->
+         <!--</div>-->
+         <div class="col-md-4">
+            <label for="inputCity" class="form-label">Phone</label>
+            <input type="tel" name="phone" class="form-control" id="inputCity">
+         </div>
+         <div class="col-md-4">
+            <label for="inputCourses" class="form-label">Python Courses</label>
+            <select name="course" class="form-select mx-auto w-auto form-select-sm" aria-label=".form-select-sm example">
+                 <option disabled selected>Choose Python Course</option>
+                 <option value="Beginner">Python for Beginners</option>
+                 <option value="Web Development">Python for Web Development</option>
+                 <option value="Data Visualisation">Python for Data Visualisation </option>
+                 <option value="Data Analytics">Python for Data Analytics</option>
+                 <option value="AI and Machine Learning">Python for AI and Machine Learning</option>
+                 <option value="Programming Applications">Python for Programming Applications</option>
+                 <option value="Game Development">Python for Game Development</option>
+                 <option value="Language Development">Python for Language Development</option>
+                 <option value="Finance">Python for Finance</option>
+                 <option value="SEO">Python for SEO</option>
+                 <option value="Design">Python for Design</option>
+        </select>
+         </div>
+         <br>
+         <br>
+         <div class="col-12">
+            <button type="submit" class="btn btn-primary">Register</button>
+         </div>
+    </form>
+
+
+{% endblock %}
