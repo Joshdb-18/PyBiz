@@ -1,5 +1,7 @@
 # Project Title: PyBiz
 
+## Not mobile responsive
+
 #### Video Demo : https://youtu.be/y-1dvCa6SFo
 
 #### Description:
