@@ -4,7 +4,7 @@
 
 #### Description:
 
-** PyBiz is a website where users can learn about python,why they should learn python, uses of python, and how to take python courses **
+ PyBiz is a website where users can learn about python,why they should learn python, uses of python, and how to take python courses
 
 #### Features of the website:
 
