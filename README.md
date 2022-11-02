@@ -65,3 +65,11 @@
 * Survey page to suggest python courses that fits users entry. 
 
 * Certificate upon courses completion. 
+
+
+``` 
+- Add your secret key
+- Add your email address to send otp
+- Add your mail password `generate a google key`
+```
+

@@ -13,7 +13,7 @@ from helpers import login_required
 # Configure application
 app = Flask(__name__)
 
-app.secret_key = '&*rtty fj*7^%'
+app.secret_key = 'your secret key'
 
 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
