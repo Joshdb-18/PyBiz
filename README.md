@@ -70,6 +70,6 @@
 ``` 
 - Add your secret key
 - Add your email address to send otp
-- Add your mail password ``It's preferable to generate a google secret key``
+- Add your mail password (It's preferable to generate a google secret key)
 ```
 
