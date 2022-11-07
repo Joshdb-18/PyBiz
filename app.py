@@ -1,4 +1,5 @@
 import os
+
 import re
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -75,17 +76,17 @@ def register():
             flash("Must provide a password")
             return render_template("register.html")
 
-        # Else if confirmation was not submitted
+        # Else if password confirmation was not submitted
         elif not request.form.get("confirmation"):
             flash("Must confirm Password")
             return render_template("register.html")
 
-        # Else if password is not the same
+        # Else if password and confirmation is not the same
         elif request.form.get("password") != request.form.get("confirmation"):
             flash("Password must match")
             return render_template("register.html")
 
-        # Hash password
+        # Hash the password
         password = generate_password_hash(request.form.get("password"), method='pbkdf2:sha256', salt_length=8)
 
         # Insert user into table
